@@ -1,0 +1,12 @@
+{
+    "manifest_version": 2,
+    "name": "回到顶部",
+    "version": "1.0.2",
+    "short_name": "go_top",
+    "description": "回到顶部小插件(纯粹版)",
+    "content_scripts": [{
+        "js": ["scripts/content.js"],
+        "matches": ["<all_urls>"],
+        "run_at": "document_start"
+    }]
+}

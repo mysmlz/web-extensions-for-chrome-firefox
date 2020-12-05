@@ -1,0 +1,10 @@
+{
+  "name": "CSDN Ad Blocker",
+  "version": "1.2",
+  "description": "1.1版本新增一处广告屏蔽. 1.2版本新增诸如\"三连\",\"关注\"才可阅读全文的去除. 作者:木易什么来着",
+  "manifest_version": 2,
+  "content_scripts": [{
+    "js": ["content.js"],
+    "matches": ["https://blog.csdn.net/*"]
+  }]
+}
