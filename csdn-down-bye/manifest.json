@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
-    "name": "滚蛋吧download.csdn.net",
-    "version": "1.0.2",
+    "name": "再见吧download.csdn.net",
+    "version": "1.0.3",
     "short_name": "go_top",
-    "description": "滚蛋吧download.csdn.net小插件,再也不要见download.csdn.net",
+    "description": "再见吧download.csdn.net小插件,再也不要见download.csdn.net",
     "content_scripts": [{
         "js": ["scripts/content.js"],
         "matches": ["https://download.csdn.net/*"],
