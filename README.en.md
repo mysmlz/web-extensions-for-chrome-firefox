@@ -1,4 +1,4 @@
-# chrome-extensions
+# web-extensions-for-chrome-firefox
 
 #### Description
-This project is a few chrome extensions made by myself.
+This project is a few chrome/firefox extensions made by myself.
