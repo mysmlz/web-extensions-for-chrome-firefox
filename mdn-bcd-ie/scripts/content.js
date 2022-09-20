@@ -7,15 +7,23 @@ var it = setInterval(function () {
         var $theadTrs = $table.getElementsByTagName('thead')[0].getElementsByTagName('tr');
         var $titleTr = $theadTrs[0];
         var $subTitleTr = $theadTrs[1];
-        var titleNode = document.createElement('th');
-        titleNode.className = 'bc-platform bc-platform-ie';
-        titleNode.title = 'ie(Powered by MDN-BCD-IE and MDN bc data.)';
-        titleNode.innerHTML = title;
-        $titleTr.appendChild(titleNode);
-        var subTitleNode = document.createElement('th');
-        subTitleNode.className = 'bc-browser bc-browser-ie';
-        subTitleNode.innerHTML = subTitle;
-        $subTitleTr.appendChild(subTitleNode);
+        var titleNode_1 = simpleCreateElement('th', {
+            className: 'bc-platform bc-platform-ie',
+            title: 'ie(Powered by MDN-BCD-IE and MDN bc data.)'
+        });
+        var titleDatas = [{ className: 'icon icon-ie' }, {
+                className: 'visually-hidden',
+                textContent: 'ie'
+            }, { className: 'icon icon-note-warning' }, { className: 'visually-hidden', textContent: 'ie' }];
+        titleDatas.forEach(function (data) { return titleNode_1.appendChild(simpleCreateElement('span', data)); });
+        $titleTr.appendChild(titleNode_1);
+        var subTitleNode_1 = simpleCreateElement('th', { className: 'bc-browser bc-browser-ie' });
+        var subData = [{
+                className: 'bc-head-txt-label bc-head-icon-ie',
+                textContent: 'Internet Explorer'
+            }, { className: 'bc-head-icon-symbol icon icon-ie' }];
+        subData.forEach(function (data) { return subTitleNode_1.appendChild(simpleCreateElement('div', data)); });
+        $subTitleTr.appendChild(subTitleNode_1);
         var xhr_1 = new XMLHttpRequest();
         var _href = location.href;
         var index = _href.indexOf('#');
@@ -36,29 +44,75 @@ var it = setInterval(function () {
                     if (_count === 1) {
                         var support = bcd.data.__compat.support['ie'][0];
                         var $tbodyTr = $table.getElementsByTagName('tbody')[0].getElementsByTagName('tr')[0];
-                        var contentNode = document.createElement('td');
-                        contentNode.className = 'bc-support bc-browser-ie bc-supports-yes bc-has-history';
+                        var contentNode = simpleCreateElement('td', { className: 'bc-support bc-browser-ie bc-supports-yes bc-has-history' });
                         var clazz = 'bc-level-yes icon icon-yes';
                         var supportLevel = 'Full support';
-                        var supportVersion = '';
-                        var icons = '';
+                        var $supportVersion = document.createElement('span');
+                        var $icons = document.createElement('div');
                         if (support.partial_implementation) {
                             clazz = 'bc-level-partial icon icon-partial';
                             supportLevel = 'Partial support';
-                            supportVersion = "<span class=\"bc-version-label\" title=\"Released " + support.release_date + "\">" + support.version_added + "</span>";
-                            icons = "<div class=\"bc-icons\"><abbr class=\"only-icon\" title=\"" + support.notes + "\"><span>more</span><i class=\"icon icon-more\"></i></abbr></div>";
+                            var _supportVersionData = {
+                                className: 'bc-version-label',
+                                title: "Released " + support.release_date,
+                                textContent: "" + support.version_added
+                            };
+                            setElementOptions($supportVersion, _supportVersionData);
+                            setElementOptions($icons, { className: 'bc-icons' });
+                            var $abbr = simpleCreateElement('abbr', {
+                                className: 'only-icon',
+                                title: "" + support.notes
+                            });
+                            var $span = simpleCreateElement('span', { textContent: 'more' });
+                            var $i = simpleCreateElement('i', { className: 'icon icon-more' });
+                            $abbr.appendChild($span);
+                            $abbr.appendChild($i);
+                            $icons.appendChild($abbr);
                         }
                         if (support.version_added === false) {
                             clazz = 'bc-level-no icon icon-no';
                             supportLevel = 'No support';
-                            supportVersion = "<span class=\"bc-version-label\" title=\"" + supportLevel + "\"></span>";
+                            $supportVersion.title = "" + supportLevel;
                         }
                         else {
-                            supportVersion = "<span class=\"bc-version-label\" title=\"Released " + support.release_date + "\">" + support.version_added + "</span>";
+                            var _supportVersionData = {
+                                className: 'bc-version-label',
+                                title: "Released " + support.release_date,
+                                textContent: "" + support.version_added
+                            };
+                            setElementOptions($supportVersion, _supportVersionData);
                         }
-                        var abbr = "<abbr class=\"" + clazz + "\" title=\"" + supportLevel + "\"><span class=\"bc-support-level\">" + supportLevel + "</span></abbr>";
-                        var content = "<button type=\"button\" title=\"Toggle history\"><div class=\"bcd-cell-text-wrapper\"><div class=\"bcd-cell-icons\"><span class=\"icon-wrap\">" + abbr + "</span></div><div class=\"bcd-cell-text-copy\"><span class=\"bc-browser-name\">Internet Explorer</span>" + supportVersion + "</div>" + icons + "</div></button>";
-                        contentNode.innerHTML = content;
+                        var _$abbr = document.createElement('abbr');
+                        var _abbrData = {
+                            className: "" + clazz,
+                            title: "" + supportLevel
+                        };
+                        setElementOptions(_$abbr, _abbrData);
+                        var bcSupportLevelData = {
+                            className: 'bc-support-level',
+                            textContent: "" + supportLevel
+                        };
+                        var $bcSupportLevel = simpleCreateElement('span', bcSupportLevelData);
+                        _$abbr.appendChild($bcSupportLevel);
+                        var $btn = simpleCreateElement('button', { title: 'Toggle history' });
+                        $btn.type = 'button';
+                        var $bcdCellTextWrapper = simpleCreateElement('div', { className: 'bcd-cell-text-wrapper' });
+                        var $bcdCellIcons = simpleCreateElement('div', { className: 'bcd-cell-icons' });
+                        var $iconWrap = simpleCreateElement('span', { className: 'icon-wrap' });
+                        $iconWrap.appendChild(_$abbr);
+                        $bcdCellIcons.appendChild($iconWrap);
+                        $bcdCellTextWrapper.appendChild($bcdCellIcons);
+                        var $bcdCellTextCopy = simpleCreateElement('div', { className: 'bcd-cell-text-copy' });
+                        var $bcBrowserName = simpleCreateElement('span', {
+                            className: 'bc-browser-name',
+                            textContent: 'Internet Explorer'
+                        });
+                        $bcdCellTextCopy.appendChild($bcBrowserName);
+                        $bcdCellTextCopy.appendChild($supportVersion);
+                        $bcdCellTextWrapper.appendChild($bcdCellTextCopy);
+                        $btn.appendChild($bcdCellTextWrapper);
+                        $btn.appendChild($icons);
+                        contentNode.appendChild($btn);
                         $tbodyTr.appendChild(contentNode);
                     }
                     else {
@@ -75,4 +129,23 @@ var it = setInterval(function () {
         xhr_1.send(null);
     }
 }, 1000);
+function simpleCreateElement(tagName, options) {
+    var element = document.createElement(tagName);
+    setElementOptions(element, options);
+    return element;
+}
+function setElementOptions(element, options) {
+    if (options) {
+        var className = options.className, title_1 = options.title, textContent = options.textContent;
+        if (className) {
+            element.className = className;
+        }
+        if (title_1) {
+            element.title = title_1;
+        }
+        if (textContent) {
+            element.textContent = textContent;
+        }
+    }
+}
 //# sourceMappingURL=content.js.map
