@@ -44,82 +44,26 @@ var it = setInterval(function () {
                     if (_count === 1) {
                         var support = bcd.data.__compat.support['ie'][0];
                         var $tbodyTr = $table.getElementsByTagName('tbody')[0].getElementsByTagName('tr')[0];
-                        var contentNode = simpleCreateElement('td', { className: 'bc-support bc-browser-ie bc-supports-yes bc-has-history' });
-                        var clazz = 'bc-level-yes icon icon-yes';
-                        var supportLevel = 'Full support';
-                        var $supportVersion = document.createElement('span');
-                        var $icons = document.createElement('div');
-                        if (support.partial_implementation) {
-                            clazz = 'bc-level-partial icon icon-partial';
-                            supportLevel = 'Partial support';
-                            var _supportVersionData = {
-                                className: 'bc-version-label',
-                                title: "Released " + support.release_date,
-                                textContent: "" + support.version_added
-                            };
-                            setElementOptions($supportVersion, _supportVersionData);
-                            setElementOptions($icons, { className: 'bc-icons' });
-                            var $abbr = simpleCreateElement('abbr', {
-                                className: 'only-icon',
-                                title: "" + support.notes
-                            });
-                            var $span = simpleCreateElement('span', { textContent: 'more' });
-                            var $i = simpleCreateElement('i', { className: 'icon icon-more' });
-                            $abbr.appendChild($span);
-                            $abbr.appendChild($i);
-                            $icons.appendChild($abbr);
-                        }
-                        if (support.version_added === false) {
-                            clazz = 'bc-level-no icon icon-no';
-                            supportLevel = 'No support';
-                            $supportVersion.title = "" + supportLevel;
-                        }
-                        else {
-                            var _supportVersionData = {
-                                className: 'bc-version-label',
-                                title: "Released " + support.release_date,
-                                textContent: "" + support.version_added
-                            };
-                            setElementOptions($supportVersion, _supportVersionData);
-                        }
-                        var _$abbr = document.createElement('abbr');
-                        var _abbrData = {
-                            className: "" + clazz,
-                            title: "" + supportLevel
-                        };
-                        setElementOptions(_$abbr, _abbrData);
-                        var bcSupportLevelData = {
-                            className: 'bc-support-level',
-                            textContent: "" + supportLevel
-                        };
-                        var $bcSupportLevel = simpleCreateElement('span', bcSupportLevelData);
-                        _$abbr.appendChild($bcSupportLevel);
-                        var $btn = simpleCreateElement('button', { title: 'Toggle history' });
-                        $btn.type = 'button';
-                        var $bcdCellTextWrapper = simpleCreateElement('div', { className: 'bcd-cell-text-wrapper' });
-                        var $bcdCellIcons = simpleCreateElement('div', { className: 'bcd-cell-icons' });
-                        var $iconWrap = simpleCreateElement('span', { className: 'icon-wrap' });
-                        $iconWrap.appendChild(_$abbr);
-                        $bcdCellIcons.appendChild($iconWrap);
-                        $bcdCellTextWrapper.appendChild($bcdCellIcons);
-                        var $bcdCellTextCopy = simpleCreateElement('div', { className: 'bcd-cell-text-copy' });
-                        var $bcBrowserName = simpleCreateElement('span', {
-                            className: 'bc-browser-name',
-                            textContent: 'Internet Explorer'
-                        });
-                        $bcdCellTextCopy.appendChild($bcBrowserName);
-                        $bcdCellTextCopy.appendChild($supportVersion);
-                        $bcdCellTextWrapper.appendChild($bcdCellTextCopy);
-                        $btn.appendChild($bcdCellTextWrapper);
-                        $btn.appendChild($icons);
-                        contentNode.appendChild($btn);
-                        $tbodyTr.appendChild(contentNode);
+                        _create(support, $tbodyTr);
                     }
                     else {
+                        console.log(bcd.data);
+                        var _index = 0;
                         for (var key in bcd.data) {
-                            if (Object.prototype.hasOwnProperty.call(bcd.data, key) && key !== '__compat') {
+                            if (Object.prototype.hasOwnProperty.call(bcd.data, key)) {
                                 var element = bcd.data[key];
-                                console.log(key, element.__compat.support['ie'][0]);
+                                var support = void 0;
+                                if (key === '__compat') {
+                                    support = element.support['ie'][0];
+                                    console.log(key, support);
+                                }
+                                else {
+                                    support = element.__compat.support['ie'][0];
+                                    console.log(key, support);
+                                }
+                                var $tbodyTr = $table.getElementsByTagName('tbody')[0].getElementsByTagName('tr')[_index];
+                                _create(support, $tbodyTr);
+                                _index++;
                             }
                         }
                     }
@@ -129,6 +73,78 @@ var it = setInterval(function () {
         xhr_1.send(null);
     }
 }, 1000);
+function _create(support, $tbodyTr) {
+    var contentNode = simpleCreateElement('td', { className: 'bc-support bc-browser-ie bc-supports-yes bc-has-history' });
+    var clazz = 'bc-level-yes icon icon-yes';
+    var supportLevel = 'Full support';
+    var $supportVersion = document.createElement('span');
+    var $icons = document.createElement('div');
+    if (support.partial_implementation) {
+        clazz = 'bc-level-partial icon icon-partial';
+        supportLevel = 'Partial support';
+        var _supportVersionData = {
+            className: 'bc-version-label',
+            title: "Released " + support.release_date,
+            textContent: "" + support.version_added
+        };
+        setElementOptions($supportVersion, _supportVersionData);
+        setElementOptions($icons, { className: 'bc-icons' });
+        var $abbr = simpleCreateElement('abbr', {
+            className: 'only-icon',
+            title: "" + support.notes
+        });
+        var $span = simpleCreateElement('span', { textContent: 'more' });
+        var $i = simpleCreateElement('i', { className: 'icon icon-more' });
+        $abbr.appendChild($span);
+        $abbr.appendChild($i);
+        $icons.appendChild($abbr);
+    }
+    if (support.version_added === false) {
+        clazz = 'bc-level-no icon icon-no';
+        supportLevel = 'No support';
+        $supportVersion.title = "" + supportLevel;
+    }
+    else {
+        var _supportVersionData = {
+            className: 'bc-version-label',
+            title: "Released " + support.release_date,
+            textContent: "" + support.version_added
+        };
+        setElementOptions($supportVersion, _supportVersionData);
+    }
+    var _$abbr = document.createElement('abbr');
+    var _abbrData = {
+        className: "" + clazz,
+        title: "" + supportLevel
+    };
+    setElementOptions(_$abbr, _abbrData);
+    var bcSupportLevelData = {
+        className: 'bc-support-level',
+        textContent: "" + supportLevel
+    };
+    var $bcSupportLevel = simpleCreateElement('span', bcSupportLevelData);
+    _$abbr.appendChild($bcSupportLevel);
+    var $btn = simpleCreateElement('button', { title: 'Toggle history' });
+    $btn.type = 'button';
+    var $bcdCellTextWrapper = simpleCreateElement('div', { className: 'bcd-cell-text-wrapper' });
+    var $bcdCellIcons = simpleCreateElement('div', { className: 'bcd-cell-icons' });
+    var $iconWrap = simpleCreateElement('span', { className: 'icon-wrap' });
+    $iconWrap.appendChild(_$abbr);
+    $bcdCellIcons.appendChild($iconWrap);
+    $bcdCellTextWrapper.appendChild($bcdCellIcons);
+    var $bcdCellTextCopy = simpleCreateElement('div', { className: 'bcd-cell-text-copy' });
+    var $bcBrowserName = simpleCreateElement('span', {
+        className: 'bc-browser-name',
+        textContent: 'Internet Explorer'
+    });
+    $bcdCellTextCopy.appendChild($bcBrowserName);
+    $bcdCellTextCopy.appendChild($supportVersion);
+    $bcdCellTextWrapper.appendChild($bcdCellTextCopy);
+    $btn.appendChild($bcdCellTextWrapper);
+    $btn.appendChild($icons);
+    contentNode.appendChild($btn);
+    $tbodyTr.appendChild(contentNode);
+}
 function simpleCreateElement(tagName, options) {
     var element = document.createElement(tagName);
     setElementOptions(element, options);

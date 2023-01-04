@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "MDN-BCD-IE",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "short_name": "mdn-bcn-ie",
     "description": "MDN浏览器兼容性IE显示插件,MDN网站不再支持显示IE的兼容性,但数据仍然存在,故可以重新显示.\"MDN browser compatibility ie display\" plugin, MDN website no longer supports displaying ie compatibility, but the data still exists, so it can be re displayed.",
     "content_scripts": [{
