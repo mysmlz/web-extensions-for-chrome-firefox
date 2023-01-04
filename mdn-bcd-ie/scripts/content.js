@@ -1,5 +1,16 @@
 var title = '<span class="icon icon-ie"></span><span class="visually-hidden">ie</span><span class="icon icon-note-warning"></span><span class="visually-hidden">ie</span>';
 var subTitle = '<div class="bc-head-txt-label bc-head-icon-ie">Internet Explorer</div><div class="bc-head-icon-symbol icon icon-ie"></div>';
+var _title;
+var lang = navigator.language;
+if (lang.toLowerCase() === 'zh-cn') {
+    _title = 'ie(由MDN-BCD-IE和MDN bc data驱动.)';
+}
+else if (lang.toLowerCase() === 'zh-tw' || lang.toLowerCase() === 'zh-hk') {
+    _title = 'ie(由MDN-BCD-IE和MDN bc數據支持.)';
+}
+else {
+    _title = 'ie(Powered by MDN-BCD-IE and MDN bc data.)';
+}
 var it = setInterval(function () {
     var $table = document.getElementsByClassName('bc-table')[0];
     if ($table) {
@@ -9,7 +20,7 @@ var it = setInterval(function () {
         var $subTitleTr = $theadTrs[1];
         var titleNode_1 = simpleCreateElement('th', {
             className: 'bc-platform bc-platform-ie',
-            title: 'ie(Powered by MDN-BCD-IE and MDN bc data.)'
+            title: _title
         });
         var titleDatas = [{ className: 'icon icon-ie' }, {
                 className: 'visually-hidden',
@@ -47,7 +58,6 @@ var it = setInterval(function () {
                         _create(support, $tbodyTr);
                     }
                     else {
-                        console.log(bcd.data);
                         var _index = 0;
                         for (var key in bcd.data) {
                             if (Object.prototype.hasOwnProperty.call(bcd.data, key)) {
@@ -55,15 +65,23 @@ var it = setInterval(function () {
                                 var support = void 0;
                                 if (key === '__compat') {
                                     support = element.support['ie'][0];
-                                    console.log(key, support);
+                                    var $tbodyTr = $table.getElementsByTagName('tbody')[0].getElementsByTagName('tr')[_index];
+                                    _create(support, $tbodyTr);
+                                    _index++;
                                 }
                                 else {
-                                    support = element.__compat.support['ie'][0];
-                                    console.log(key, support);
+                                    for (var k in element) {
+                                        var $tbodyTr = $table.getElementsByTagName('tbody')[0].getElementsByTagName('tr')[_index];
+                                        if (k === '__compat') {
+                                            support = element.__compat.support['ie'][0];
+                                        }
+                                        else {
+                                            support = element[k].__compat.support['ie'][0];
+                                        }
+                                        _create(support, $tbodyTr);
+                                        _index++;
+                                    }
                                 }
-                                var $tbodyTr = $table.getElementsByTagName('tbody')[0].getElementsByTagName('tr')[_index];
-                                _create(support, $tbodyTr);
-                                _index++;
                             }
                         }
                     }
