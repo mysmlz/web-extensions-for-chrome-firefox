@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [1.0.3.1] -2023-01-04
+
+### Features
+
+- Add product icon
+
 ## [1.0.3] - 2023-01-04
 
 ### Features
