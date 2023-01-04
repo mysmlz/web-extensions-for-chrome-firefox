@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## [1.0.3] - 2023-01-04
+
+### Features
+
+- Full support for all methods
+
+### Refactored
+
+- Small icons are compatible with different language versions
+
 ## [1.0.2] - 2023-01-04
 
 ### Features
