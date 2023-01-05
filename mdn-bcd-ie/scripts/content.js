@@ -6,7 +6,7 @@ if (lang.toLowerCase() === 'zh-cn') {
     _title = 'ie(由MDN-BCD-IE和MDN bc data驱动.)';
 }
 else if (lang.toLowerCase() === 'zh-tw' || lang.toLowerCase() === 'zh-hk') {
-    _title = 'ie(由MDN-BCD-IE和MDN bc數據支持.)';
+    _title = 'ie(由MDN-BCD-IE和MDN bc data支持.)';
 }
 else {
     _title = 'ie(Powered by MDN-BCD-IE and MDN bc data.)';
