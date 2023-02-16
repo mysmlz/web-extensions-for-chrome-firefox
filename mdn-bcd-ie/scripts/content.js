@@ -37,11 +37,11 @@ var it = setInterval(function () {
         $subTitleTr.appendChild(subTitleNode_1);
         var xhr_1 = new XMLHttpRequest();
         var _href = location.href;
-        var index = _href.indexOf('#');
-        if (index > 0) {
-            _href = _href.substring(0, index);
-        }
-        xhr_1.open('get', _href + "/bcd.json");
+        var s = _href.split('Global_Objects/')[1];
+        var _s = s.split('#')[0];
+        var builtin = _s.replace(/\//g, '.');
+        var bcdUrl = "https://developer.mozilla.org/bcd/api/v0/current/javascript.builtins." + builtin + ".json";
+        xhr_1.open('get', bcdUrl);
         xhr_1.onreadystatechange = function () {
             if (xhr_1.readyState === 4) {
                 if (xhr_1.status === 200) {

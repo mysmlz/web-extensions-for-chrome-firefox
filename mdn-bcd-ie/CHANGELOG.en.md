@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [1.0.4] - 2023-02-16
+
+### Update
+
+- update bcd url
+
 ## [1.0.3.1] -2023-01-04
 
 ### Features
