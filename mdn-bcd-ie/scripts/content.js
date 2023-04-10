@@ -37,10 +37,19 @@ var it = setInterval(function () {
         $subTitleTr.appendChild(subTitleNode_1);
         var xhr_1 = new XMLHttpRequest();
         var _href = location.href;
-        var s = _href.split('Global_Objects/')[1];
-        var _s = s.split('#')[0];
-        var builtin = _s.replace(/\//g, '.');
-        var bcdUrl = "https://developer.mozilla.org/bcd/api/v0/current/javascript.builtins." + builtin + ".json";
+        var bcdUrl = 'https://developer.mozilla.org/bcd/api/v0/current/';
+        if (location.href.indexOf('/Web/CSS/') >= 0) {
+            var s = _href.split('/Web/CSS/')[1];
+            var _s = s.split('#')[0];
+            var builtin = _s.replace(/\//g, '.');
+            bcdUrl += "css.types." + builtin + ".json";
+        }
+        else {
+            var s = _href.split('Global_Objects/')[1];
+            var _s = s.split('#')[0];
+            var builtin = _s.replace(/\//g, '.');
+            bcdUrl += "javascript.builtins." + builtin + ".json";
+        }
         xhr_1.open('get', bcdUrl);
         xhr_1.onreadystatechange = function () {
             if (xhr_1.readyState === 4) {

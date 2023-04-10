@@ -37,10 +37,20 @@ let it: number = setInterval(() => {
         $subTitleTr.appendChild(subTitleNode);
         let xhr: XMLHttpRequest = new XMLHttpRequest();
         let _href: string = location.href;
-        const s: string = _href.split('Global_Objects/')[1];
-        const _s: string = s.split('#')[0];
-        const builtin: string = _s.replace(/\//g, '.');
-        const bcdUrl: string = `https://developer.mozilla.org/bcd/api/v0/current/javascript.builtins.${builtin}.json`;
+        let bcdUrl: string = 'https://developer.mozilla.org/bcd/api/v0/current/';
+        //css
+        if (location.href.indexOf('/Web/CSS/') >= 0) {
+            const s: string = _href.split('/Web/CSS/')[1];
+            const _s: string = s.split('#')[0];
+            const builtin: string = _s.replace(/\//g, '.');
+            bcdUrl += `css.types.${builtin}.json`;
+        } else {
+            //js
+            const s: string = _href.split('Global_Objects/')[1];
+            const _s: string = s.split('#')[0];
+            const builtin: string = _s.replace(/\//g, '.');
+            bcdUrl += `javascript.builtins.${builtin}.json`;
+        }
         xhr.open('get', bcdUrl);
         xhr.onreadystatechange = () => {
             if (xhr.readyState === 4) {
