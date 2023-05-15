@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <title>options</title>
+    <script src="scripts/options.js"></script>
+    <link href="styles/options.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="options-wrapper">
+        <div>
+            是否在百度(https://www.baidu.com/s?*)生效:
+            <input type="radio" name="baidu">
+        </div>
+        <div>是否在Bing生效(https://cn.bing.com/search?*)生效:
+            <input type="radio" name="bing"></div>
+        <div>过滤的网站</div>
+        <div>
+            <input name="site" placeholder="添加过滤(例如https://download.csdn.net/*)"><button id="add">+添加</button>
+            <ul id="sites">
+
+            </ul>
+        </div>
+        <button id="save">保存</button>
+    </div>
+</body>
+
+</html>
