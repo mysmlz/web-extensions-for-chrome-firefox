@@ -37,7 +37,7 @@ var it = setInterval(function () {
         $subTitleTr.appendChild(subTitleNode_1);
         var xhr_1 = new XMLHttpRequest();
         var _href = location.href;
-        var bcdUrl = 'https://developer.mozilla.org/bcd/api/v0/current/';
+        var bcdUrl = 'https://bcd.developer.mozilla.org/bcd/api/v0/current/';
         if (location.href.indexOf('/Web/CSS/') >= 0) {
             var s = _href.split('/Web/CSS/')[1];
             var _s = s.split('#')[0];
