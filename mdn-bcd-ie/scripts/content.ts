@@ -37,7 +37,7 @@ let it: number = setInterval(() => {
         $subTitleTr.appendChild(subTitleNode);
         let xhr: XMLHttpRequest = new XMLHttpRequest();
         let _href: string = location.href;
-        let bcdUrl: string = 'https://developer.mozilla.org/bcd/api/v0/current/';
+        let bcdUrl: string = 'https://bcd.developer.mozilla.org/bcd/api/v0/current/';
         //css
         if (location.href.indexOf('/Web/CSS/') >= 0) {
             const s: string = _href.split('/Web/CSS/')[1];
