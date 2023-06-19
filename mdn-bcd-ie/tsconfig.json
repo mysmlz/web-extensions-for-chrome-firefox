@@ -1,8 +1,0 @@
-{
-    "compilerOptions": {
-        "module":"ES6",
-        "removeComments": true,
-        "sourceMap": true,
-        "lib":["DOM","es5","ES2015.Collection"]
-    }
-}
