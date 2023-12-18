@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "拦截不受欢迎的网站",
+    "version": "1.0.0_dev",
+    "short_name": "wi",
+    "description": "拦截不受欢迎的网站,跳转到百度(csdn下载、csdn搜索、术之多)",
+    "content_scripts": [
+        {
+            "js": [
+                "scripts/content.js"
+            ],
+            "matches": [
+                "https://download.csdn.net/*",
+                "https://www.csdn.net/tags/*",
+                "https://www.shuzhiduo.com/*"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "options_ui": {
+        "page": "options.html"
+    },
+    "permissions": [
+        "storage"
+    ]
+}
