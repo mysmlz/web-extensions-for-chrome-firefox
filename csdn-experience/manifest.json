@@ -1,5 +1,5 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "csdn体验优化",
     "version": "1.0.4",
     "short_name": "csdn_bye",

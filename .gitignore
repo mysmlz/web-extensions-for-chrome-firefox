@@ -8,3 +8,5 @@
 *.crx
 */*.iml
 .fleet/
+n/**
+.idea/
