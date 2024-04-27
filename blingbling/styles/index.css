@@ -1,0 +1,29 @@
+.feed-card:has(.bili-video-card:not(.enable-no-interest)),
+.bili-video-card:not(.enable-no-interest) {
+  position: fixed !important;
+  top: -1000px;
+}
+.bling-bling {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  border: 1px solid red;
+  width: 100px;
+  height: 100px;
+}
+.bling-bling .bling-option {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e3e5e7;
+  border-radius: 8px;
+  color: #18191c;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.bling-bling .bling-option.bling-option-selected {
+  background: #00ceec;
+  color: white;
+}
+/*# sourceMappingURL=index.css.map */
