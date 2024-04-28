@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "BlingBling",
-  "version": "1.0.0",
+  "version": "0.1.2",
   "short_name": "bling",
   "description": "bilibili页面优化",
   "content_scripts": [
@@ -11,7 +11,9 @@
       ],
       "css": [
         "styles/index.css",
-        "styles/swipe.css"
+        "styles/swipe.css",
+        "styles/upload-hide.css",
+        "styles/vip-hide.css"
       ],
       "matches": [
         "https://www.bilibili.com/*"

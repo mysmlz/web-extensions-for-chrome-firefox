@@ -1,30 +1,43 @@
-.feed-card:has(.bili-video-card:not(.enable-no-interest)), .bili-video-card:not(.enable-no-interest) {
-    position: fixed !important;
-    top: -1000px;
-}
+@charset "UTF-8";
 
-.bling-bling {
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    border: 1px solid red;
-    width: 100px;
-    height: 100px;
+@blingWidth: 40px;
 
-    .bling-option {
-        width: 40px;
-        height: $width;
-        border: 1px solid #e3e5e7;
-        border-radius: 8px;
-        color: #18191c;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
+body {
+    .adblock-tips {
+        display: none !important;
+    }
 
-        &.bling-option-selected {
-            background: #00ceec;
-            color: white;
+    .bling-dark {
+        background: #000 !important;
+    }
+
+    .feed-card:has(.bili-video-card:not(.enable-no-interest)), .bili-video-card:not(.enable-no-interest) {
+        display: none !important;
+    }
+
+    .bling-bling {
+        position: fixed;
+        right: @blingWidth;
+        bottom: 30px;
+        width: $right;
+        height: auto;
+
+        .bling-option {
+            width: @blingWidth;
+            height: $width;
+            border: 1px solid #e3e5e7;
+            border-radius: 8px;
+            color: #18191c;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-top: 6px;
+
+            &.bling-option-selected {
+                background: #00ceec;
+                color: white;
+            }
         }
     }
 }

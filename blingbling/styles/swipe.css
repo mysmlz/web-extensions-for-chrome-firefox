@@ -1,5 +1,5 @@
+@charset "UTF-8";
 .recommended-swipe {
-  position: fixed !important;
-  top: -10000px;
+  display: none !important;
 }
 /*# sourceMappingURL=swipe.css.map */

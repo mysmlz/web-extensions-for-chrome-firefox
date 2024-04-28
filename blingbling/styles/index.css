@@ -1,17 +1,22 @@
-.feed-card:has(.bili-video-card:not(.enable-no-interest)),
-.bili-video-card:not(.enable-no-interest) {
-  position: fixed !important;
-  top: -1000px;
+@charset "UTF-8";
+body .adblock-tips {
+  display: none !important;
 }
-.bling-bling {
+body .bling-dark {
+  background: #000 !important;
+}
+body .feed-card:has(.bili-video-card:not(.enable-no-interest)),
+body .bili-video-card:not(.enable-no-interest) {
+  display: none !important;
+}
+body .bling-bling {
   position: fixed;
-  right: 30px;
+  right: 40px;
   bottom: 30px;
-  border: 1px solid red;
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: auto;
 }
-.bling-bling .bling-option {
+body .bling-bling .bling-option {
   width: 40px;
   height: 40px;
   border: 1px solid #e3e5e7;
@@ -21,8 +26,9 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  margin-top: 6px;
 }
-.bling-bling .bling-option.bling-option-selected {
+body .bling-bling .bling-option.bling-option-selected {
   background: #00ceec;
   color: white;
 }
