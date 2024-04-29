@@ -31,11 +31,17 @@
 > 保留所有权利。Adblock Plus® 是 eyeo GmbH 的注册 商标。
 
 > 关于插件图标
+> 
 > 来自[IconStore](https://iconstore.co)的[Valentines Day Icons](https://iconstore.co/icons/valentines-day-icons).由[Icons8](https://icons8.com)设计.对其进行了格式转换.
+> 
 > About the icon of this plugin
+> 
 > From [IconStore](https://iconstore.co)'s [Vlentines Day Icons](https://iconstore.co/icons/valentines-day-icons).Designed by [Icons8](https://icons8.com).And I have converted it to a png format.
 
 > 关于部分其他图标
-> 来自[iconfont ](https://www.iconfont.cn).
+> 
+> 来自[iconfont](https://www.iconfont.cn).
+> 
 > About some other icons
-> From [iconfont ](https://www.iconfont.cn).
+> 
+> From [iconfont](https://www.iconfont.cn).
