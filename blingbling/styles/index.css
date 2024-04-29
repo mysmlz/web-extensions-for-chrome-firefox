@@ -2,8 +2,11 @@
 body .adblock-tips {
   display: none !important;
 }
-body .bling-dark {
+body.bling-dark #i_cecream {
   background: #000 !important;
+}
+body.bling-dark .bling-bling .bling-option {
+  border: 0;
 }
 body .feed-card:has(.bili-video-card:not(.enable-no-interest)),
 body .bili-video-card:not(.enable-no-interest) {
@@ -16,10 +19,14 @@ body .bling-bling {
   width: 40px;
   height: auto;
 }
+body .bling-bling.bling-bling-video {
+  right: 6px;
+  bottom: 240px;
+}
 body .bling-bling .bling-option {
   width: 40px;
   height: 40px;
-  border: 1px solid #e3e5e7;
+  border: 0.666667px solid #e3e5e7;
   border-radius: 8px;
   color: #18191c;
   display: inline-flex;

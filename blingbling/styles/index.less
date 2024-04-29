@@ -7,8 +7,16 @@ body {
         display: none !important;
     }
 
-    .bling-dark {
-        background: #000 !important;
+    &.bling-dark {
+        #i_cecream {
+            background: #000 !important;
+        }
+
+        .bling-bling {
+            .bling-option {
+                border: 0;
+            }
+        }
     }
 
     .feed-card:has(.bili-video-card:not(.enable-no-interest)), .bili-video-card:not(.enable-no-interest) {
@@ -22,10 +30,15 @@ body {
         width: $right;
         height: auto;
 
+        &.bling-bling-video {
+            right: 6px;
+            bottom: 240px;
+        }
+
         .bling-option {
             width: @blingWidth;
             height: $width;
-            border: 1px solid #e3e5e7;
+            border: 0.666667px solid #e3e5e7;
             border-radius: 8px;
             color: #18191c;
             display: inline-flex;

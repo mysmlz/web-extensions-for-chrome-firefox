@@ -1,9 +1,15 @@
 {
   "manifest_version": 3,
   "name": "BlingBling",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "short_name": "bling",
   "description": "bilibili页面优化",
+  "icons": {
+    "16": "icons/Wink.png",
+    "32": "icons/Wink.png",
+    "64": "icons/Wink.png",
+    "128": "icons/Wink.png"
+  },
   "content_scripts": [
     {
       "js": [
@@ -12,8 +18,7 @@
       "css": [
         "styles/index.css",
         "styles/swipe.css",
-        "styles/upload-hide.css",
-        "styles/vip-hide.css"
+        "styles/hide.css"
       ],
       "matches": [
         "https://www.bilibili.com/*"
