@@ -80,12 +80,16 @@ function optionSwitch(elements, option, elementClass, flag) {
     elementsClassSwitch(elements, elementClass, flag);
 }
 function background() {
-    var body = document.querySelector('body');
-    body.onwheel = function () {
-        console.log('wheel');
-        var singleCard = document.querySelectorAll('.floor-single-card');
-        elementsClassSwitch(singleCard, 'bling-single-hide', config.singleCardHidden);
-    };
+    if (location.href.match(/[\s\S]+com\/video\//)) {
+    }
+    else {
+        var body = document.querySelector('body');
+        body.onwheel = function () {
+            console.log('wheel');
+            var singleCard = document.querySelectorAll('.floor-single-card');
+            elementsClassSwitch(singleCard, 'bling-single-hide', config.singleCardHidden);
+        };
+    }
     var interval = setInterval(function () {
         var singleCard = document.querySelectorAll('.floor-single-card');
         if (singleCard.length > 4) {

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "BlingBling",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "short_name": "bling",
   "description": "bilibili页面优化",
   "icons": {

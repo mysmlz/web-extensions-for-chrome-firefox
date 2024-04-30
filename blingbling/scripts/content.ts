@@ -118,11 +118,15 @@ function optionSwitch(elements: Array<HTMLElement> | NodeListOf<HTMLElement>, op
  * 后台任务,包含滚动时间、定时等
  */
 function background() {
-    const body: HTMLElement = document.querySelector('body');
-    body.onwheel = function () {
-        console.log('wheel');
-        const singleCard: NodeListOf<HTMLElement> = document.querySelectorAll('.floor-single-card');
-        elementsClassSwitch(singleCard, 'bling-single-hide', config.singleCardHidden);
+    if (location.href.match(/[\s\S]+com\/video\//)) {
+
+    } else {
+        const body: HTMLElement = document.querySelector('body');
+        body.onwheel = function () {
+            console.log('wheel');
+            const singleCard: NodeListOf<HTMLElement> = document.querySelectorAll('.floor-single-card');
+            elementsClassSwitch(singleCard, 'bling-single-hide', config.singleCardHidden);
+        }
     }
     const interval: number = setInterval(() => {
         const singleCard: NodeListOf<HTMLElement> = document.querySelectorAll('.floor-single-card');
