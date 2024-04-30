@@ -2,11 +2,17 @@
 body .adblock-tips {
   display: none !important;
 }
-body.bling-dark #i_cecream {
-  background: #000 !important;
-}
 body.bling-dark .bling-bling .bling-option {
   border: 0;
+}
+body .v-popover-wrap.bling-no-upload.bling-no-upload-3 .v-popover.is-bottom {
+  margin-left: -50px !important;
+}
+body .v-popover-wrap.bling-no-upload.bling-no-upload-4 .v-popover.is-bottom {
+  margin-left: -180px !important;
+}
+body .v-popover-wrap.bling-no-upload.bling-no-upload-5 .v-popover.is-bottom {
+  margin-left: -150px !important;
 }
 body .feed-card:has(.bili-video-card:not(.enable-no-interest)),
 body .bili-video-card:not(.enable-no-interest) {
@@ -36,7 +42,7 @@ body .bling-bling .bling-option {
   margin-top: 6px;
 }
 body .bling-bling .bling-option.bling-option-selected {
-  background: #00ceec;
+  background: #00aeec;
   color: white;
 }
 /*# sourceMappingURL=index.css.map */
