@@ -43,10 +43,10 @@
 > 
 > From [IconStore](https://iconstore.co)'s [Vlentines Day Icons](https://iconstore.co/icons/valentines-day-icons).Designed by [Icons8](https://icons8.com).And I have converted it to a png format.
 
-> 关于部分其他图标
+> 关于部分其他图标(svg)
 > 
-> 来自[iconfont](https://www.iconfont.cn).
+> 部分来自[iconfont](https://www.iconfont.cn).部分取自[哔哩哔哩弹幕网网站](www.bilibili.com).
 > 
-> About some other icons
+> About some other icons(svg)
 > 
-> From [iconfont](https://www.iconfont.cn).
+> A part of icons is from [iconfont](https://www.iconfont.cn).A part of icons is from [bilibili](www.bilibili.com).
