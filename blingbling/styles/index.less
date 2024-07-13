@@ -7,6 +7,13 @@ body {
         display: none !important;
     }
 
+    .base-video-sections-v1 {
+        .video-sections-content-list {
+            max-height: 215px !important;
+            height: auto !important;
+        }
+    }
+
     &.bling-dark {
         .bling-bling {
             .bling-option {
@@ -47,6 +54,7 @@ body {
         bottom: 30px;
         width: $right;
         height: auto;
+        z-index: 100000000;
 
         &.bling-bling-video {
             right: 6px;
@@ -64,11 +72,32 @@ body {
             align-items: center;
             cursor: pointer;
             margin-top: 6px;
+            //background-color: #f1f2f3;
 
             &.bling-option-selected {
                 background: #00aeec;
                 color: white;
             }
         }
+    }
+
+    .upinfo-btn-panel {
+        .bling-elastic-follow-btn {
+            width: 100% !important;
+            max-width: 1000px !important;
+        }
+    }
+
+    .recommended-container_floor-aside .container.is-version8 {
+        & > *:nth-of-type(n + 13), & > *:nth-of-type(n + 8) {
+            margin-top: 0 !important;
+        }
+    }
+
+    .bling-founder {
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: linear-gradient(to top right, #CB7919 0%, #E6A75B 50%, #E9BD67 100%);
     }
 }

@@ -2,6 +2,10 @@
 body .adblock-tips {
   display: none !important;
 }
+body .base-video-sections-v1 .video-sections-content-list {
+  max-height: 215px !important;
+  height: auto !important;
+}
 body.bling-dark .bling-bling .bling-option {
   border: 0;
 }
@@ -24,6 +28,7 @@ body .bling-bling {
   bottom: 30px;
   width: 40px;
   height: auto;
+  z-index: 100000000;
 }
 body .bling-bling.bling-bling-video {
   right: 6px;
@@ -44,5 +49,19 @@ body .bling-bling .bling-option {
 body .bling-bling .bling-option.bling-option-selected {
   background: #00aeec;
   color: white;
+}
+body .upinfo-btn-panel .bling-elastic-follow-btn {
+  width: 100% !important;
+  max-width: 1000px !important;
+}
+body .recommended-container_floor-aside .container.is-version8 > *:nth-of-type(n + 13),
+body .recommended-container_floor-aside .container.is-version8 > *:nth-of-type(n + 8) {
+  margin-top: 0 !important;
+}
+body .bling-founder {
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to top right, #CB7919 0%, #E6A75B 50%, #E9BD67 100%);
 }
 /*# sourceMappingURL=index.css.map */

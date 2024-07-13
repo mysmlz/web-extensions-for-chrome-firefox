@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "BlingBling",
-  "version": "0.1.9",
+  "version": "0.2.4",
   "short_name": "bling",
   "description": "bilibili页面优化",
   "icons": {
@@ -13,6 +13,7 @@
   "content_scripts": [
     {
       "js": [
+        "scripts/browser-polyfill.min.js",
         "scripts/content.js"
       ],
       "css": [
@@ -22,9 +23,12 @@
         "styles/hide.css"
       ],
       "matches": [
-        "https://www.bilibili.com/*"
+        "https://*.bilibili.com/*"
       ],
       "run_at": "document_start"
     }
+  ],
+  "permissions": [
+    "storage"
   ]
 }
