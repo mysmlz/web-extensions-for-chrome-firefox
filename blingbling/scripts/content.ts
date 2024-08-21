@@ -258,10 +258,14 @@ function background() {
             clearInterval(interval6);
         }
         const danmukuBox: HTMLDivElement = document.querySelector('#danmukuBox');
-        if (config.danmukuBoxHide) {
-            danmukuBox.classList.add('bling-hide');
+        if (danmukuBox) {
+            if (config.danmukuBoxHide) {
+                danmukuBox.classList.add('bling-hide');
+            } else {
+                danmukuBox.classList.remove('bling-hide');
+            }
         } else {
-            danmukuBox.classList.remove('bling-hide');
+            clearInterval(interval6);
         }
     }, timeout);
 }

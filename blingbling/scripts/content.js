@@ -206,11 +206,16 @@ function background() {
             clearInterval(interval6);
         }
         var danmukuBox = document.querySelector('#danmukuBox');
-        if (config.danmukuBoxHide) {
-            danmukuBox.classList.add('bling-hide');
+        if (danmukuBox) {
+            if (config.danmukuBoxHide) {
+                danmukuBox.classList.add('bling-hide');
+            }
+            else {
+                danmukuBox.classList.remove('bling-hide');
+            }
         }
         else {
-            danmukuBox.classList.remove('bling-hide');
+            clearInterval(interval6);
         }
     }, timeout);
 }

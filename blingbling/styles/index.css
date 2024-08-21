@@ -19,7 +19,7 @@ body .v-popover-wrap.bling-no-upload.bling-no-upload-5 .v-popover.is-bottom {
   margin-left: -150px !important;
 }
 body .feed-card:has(.bili-video-card:not(.enable-no-interest)),
-body .bili-video-card:not(.enable-no-interest) {
+body .bili-video-card.is-rcmd:not(.enable-no-interest) {
   display: none !important;
 }
 body .bling-bling {
