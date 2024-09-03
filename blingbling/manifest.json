@@ -5,10 +5,10 @@
   "short_name": "bling",
   "description": "bilibili页面优化",
   "icons": {
-    "16": "icons/Wink.png",
-    "32": "icons/Wink.png",
-    "64": "icons/Wink.png",
-    "128": "icons/Wink.png"
+    "16": "icons/Hearts.png",
+    "32": "icons/Hearts.png",
+    "64": "icons/Hearts.png",
+    "128": "icons/Hearts.png"
   },
   "content_scripts": [
     {
