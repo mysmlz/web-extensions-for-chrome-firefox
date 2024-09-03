@@ -1,0 +1,12 @@
+{
+    "manifest_version": 2,
+    "name": "csdn体验优化",
+    "version": "1.0.4",
+    "short_name": "csdn_bye",
+    "description": "当url为csdn下载和csdn搜索时,跳转到百度",
+    "content_scripts": [{
+        "js": ["scripts/content.js"],
+        "matches": ["https://download.csdn.net/*","https://www.csdn.net/tags/*"],
+        "run_at": "document_start"
+    }]
+}
